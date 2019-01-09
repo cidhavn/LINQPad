@@ -1,6 +1,6 @@
 void Main()
 {
-	DumpClass(this.Connection, "Product").Dump();
+	DumpClass(this.Connection, "Category").Dump();
 }
 
 private static readonly Dictionary<Type, string> TypeAliases = new Dictionary<Type, string> {
@@ -54,7 +54,7 @@ private static string DumpClass(IDbConnection conn, string tableName)
         conn.Open();
     }
 
-	// 欄位描述
+    // 欄位描述
     Dictionary<string, string> columnDesc = ColumnDesc(conn, tableName);
 	
     var cmd = conn.CreateCommand();
@@ -66,7 +66,7 @@ private static string DumpClass(IDbConnection conn, string tableName)
     {
         if (reader.FieldCount <= 1) continue;
 
-        builder.AppendLine($"public class {tableName}");
+        builder.AppendLine($"public partial class {tableName}");
         builder.AppendLine("{");
         var schema = reader.GetSchemaTable();
 
