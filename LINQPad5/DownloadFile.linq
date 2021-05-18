@@ -1,3 +1,8 @@
+<Query Kind="Program">
+  <Reference>&lt;RuntimeDirectory&gt;\System.Net.Http.dll</Reference>
+  <Namespace>System.Net.Http</Namespace>
+</Query>
+
 void Main()
 {
 	string url = "https://shop.lianhwa.com.tw/gmc_product_feed.php?auth=84ab32ea4aabd841a551846b050a873a";
